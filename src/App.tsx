@@ -56,7 +56,7 @@ export default function App() {
           {/* Hero Background Image with subtle black overlay */}
           <div className="absolute inset-0 z-0 bg-black">
             <img
-              src="https://ptotpfdlgsohxmsrfczs.supabase.co/storage/v1/object/public/bucket/axel-antas-bergkvist-_PDndqdsA3o-unsplash.jpg"
+              src="/axel-antas-bergkvist-_PDndqdsA3o-unsplash.jpg"
               alt="Automotive Industrial background"
               className="w-full h-full object-cover object-center opacity-60 filter contrast-[1.02] brightness-[0.95]"
               referrerPolicy="no-referrer"
