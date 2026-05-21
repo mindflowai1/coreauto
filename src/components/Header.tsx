@@ -34,17 +34,16 @@ export default function Header() {
   return (
     <header
       id="main-header"
-      className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/85 py-3 shadow-sm'
-          : 'bg-white py-4 border-b border-slate-100'
-      }`}
+      className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${isScrolled
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/85 h-20 shadow-sm'
+          : 'bg-white h-20 sm:h-24 border-b border-slate-150'
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <div className="cursor-pointer" onClick={() => scrollToSection('home')}>
-            <Logo />
+          <div className="cursor-pointer flex items-center h-full" onClick={() => scrollToSection('home')}>
+            <Logo className="-my-3 sm:-my-5" />
           </div>
 
           {/* Desktop Nav */}

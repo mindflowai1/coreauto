@@ -52,7 +52,7 @@ export default function CategorySelector() {
 
       {/* Expanded Category Showcase */}
       {currentCategoryData && (
-        <div className="bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl shadow-black/40">
+        <div className="bg-slate-900/50 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl shadow-black/40 group">
           
           {/* Card Left: Text Detail */}
           <div className="p-6 sm:p-10 lg:col-span-7 flex flex-col justify-between space-y-8">

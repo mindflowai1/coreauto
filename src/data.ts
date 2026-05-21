@@ -33,7 +33,7 @@ export const PART_CATEGORIES: PartCategory[] = [
     description: 'Motores completos, cabeçotes, blocos, caixas de câmbio manual e automático, virabrequins, coletores e bielas.',
     iconName: 'Cpu',
     popularItems: ['Motor Parcial', 'Cabeçote Completo', 'Câmbio Automático', 'Bloco do Motor', 'Cárter de Óleo', 'Comando de Válvulas'],
-    imageName: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=600'
+    imageName: '/motor.jpg'
   },
   {
     id: 'suspensao-direcao',
@@ -73,7 +73,7 @@ export const PART_CATEGORIES: PartCategory[] = [
     description: 'Módulos ABS, pinças de freio, cilindros mestre, kits de Airbag completos (bolsas, sensores, painel, cintos).',
     iconName: 'ShieldAlert',
     popularItems: ['Kit Airbag Completo', 'Módulo ABS', 'Pinça de Freio Dianteira', 'Cilindro Mestre', 'Bolsa de Airbag do Volante', 'Hidrovácuo'],
-    imageName: 'https://images.unsplash.com/photo-1606577924006-27d39b132ca2?auto=format&fit=crop&q=80&w=600'
+    imageName: '/freio.jpg'
   }
 ];
 

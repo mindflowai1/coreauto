@@ -4,50 +4,6 @@ import { ShieldCheck, Search, ShieldAlert, Cpu, Heart, AlertTriangle, CheckCircl
 export default function AuthorityFeatures() {
   return (
     <div className="space-y-16">
-      
-      {/* 3 Main Pillars Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        {/* Pillar 1 */}
-        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-4 hover:border-slate-950 hover:shadow-lg transition-all duration-300">
-          <div className="w-12 h-12 bg-slate-100 rounded-xl border border-slate-200 flex items-center justify-center">
-            <ShieldCheck className="w-6 h-6 text-amber-500" />
-          </div>
-          <h4 className="font-display font-black text-lg text-slate-950">
-            100% Legalidade & Procedência
-          </h4>
-          <p className="text-sm text-slate-600 leading-relaxed">
-            Somos uma distribuidora credenciada. Nossos produtos seminovos provêm estritamente de leilões autorizados com baixa oficial registrada no Detran, acompanhados de Nota Fiscal de rastreabilidade completa.
-          </p>
-        </div>
-
-        {/* Pillar 2 */}
-        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-4 hover:border-slate-950 hover:shadow-lg transition-all duration-300">
-          <div className="w-12 h-12 bg-slate-100 rounded-xl border border-slate-200 flex items-center justify-center">
-            <Search className="w-6 h-6 text-slate-900" />
-          </div>
-          <h4 className="font-display font-black text-lg text-slate-950">
-            Consulta Sem Erros via Chassi
-          </h4>
-          <p className="text-sm text-slate-600 leading-relaxed">
-            As montadoras Hyundai e Kia alteram peças discretamente de acordo com o ano e lote. Nós consultamos diretamente o número de chassi do seu veículo no catálogo original de fábrica antes do envio. Erro zero!
-          </p>
-        </div>
-
-        {/* Pillar 3 */}
-        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200/80 space-y-4 hover:border-slate-950 hover:shadow-lg transition-all duration-300">
-          <div className="w-12 h-12 bg-slate-100 rounded-xl border border-slate-200 flex items-center justify-center">
-            <RefreshCcw className="w-6 h-6 text-slate-900" />
-          </div>
-          <h4 className="font-display font-black text-lg text-slate-950">
-            Inspecionado & Higienizado
-          </h4>
-          <p className="text-sm text-slate-600 leading-relaxed">
-            Não vendemos sucatas de ferro-velho. Nossos produtos são desmontados mecanicamente, testados quanto ao desempenho (compressão, elétrica, estanqueidade), higienizados e devidamente embalados para transporte.
-          </p>
-        </div>
-
-      </div>
 
       {/* Comparisons Block / Honest Battle */}
       <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg shadow-slate-100/40">

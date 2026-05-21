@@ -6,15 +6,14 @@ import AuthorityFeatures from './components/AuthorityFeatures';
 import Testimonials from './components/Testimonials';
 import FAQAccordions from './components/FAQAccordions';
 import Footer from './components/Footer';
-import Logo from './components/Logo';
-import { 
-  ShieldCheck, 
-  ChevronRight, 
-  Sliders, 
-  MessageSquare, 
-  Compass, 
-  Truck, 
-  AlertCircle, 
+import {
+  ShieldCheck,
+  ChevronRight,
+  Sliders,
+  MessageSquare,
+  Compass,
+  Truck,
+  AlertCircle,
   ArrowRight,
   Car,
   BadgeAlert,
@@ -36,7 +35,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white font-sans antialiased text-slate-800">
-      
+
       {/* Dynamic Background Noise/Mesh - Light Scheme */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-amber-500/5 blur-[120px]" />
@@ -44,13 +43,13 @@ export default function App() {
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">
-        
+
         {/* Navigation Navbar */}
         <Header />
 
         {/* Hero Section: The Automotive Command Center */}
-        <section 
-          id="home" 
+        <section
+          id="home"
           className="relative pt-24 pb-16 sm:py-32 lg:py-0 lg:h-screen lg:min-h-[680px] lg:max-h-[860px] lg:flex lg:items-center border-b border-slate-150 overflow-hidden"
         >
           {/* Hero Background Image with subtle black overlay */}
@@ -68,14 +67,19 @@ export default function App() {
 
           {/* Subtle industrial background pattern layout overlay */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a08_1px,transparent_1px),linear-gradient(to_bottom,#0f172a08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-10" />
-          
+
           {/* Hero Content Grid */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full lg:pt-16 xl:pt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full lg:pt-16 xl:pt-20"
+          >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
-              
+
               {/* Left Column: Typography directly on background with maximum impact and contrast */}
               <div className="lg:col-span-7 space-y-5 text-center lg:text-left relative z-20">
-                
+
                 {/* Brand Pill badge - High Impact Contrast */}
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-sans font-black text-[10px] xl:text-xs uppercase tracking-wider shadow-md hover:scale-102 transition-transform">
@@ -137,16 +141,22 @@ export default function App() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Brand Focus / Exclusividade Section */}
-        <section 
-          id="especialidades" 
+        <section
+          id="especialidades"
           className="py-16 sm:py-24 border-b border-slate-100 bg-white"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+          <motion.div
+            initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          >
+
             {/* Header section name */}
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
               <span className="text-[11px] font-bold text-amber-500 uppercase tracking-widest block">
@@ -162,40 +172,39 @@ export default function App() {
 
             {/* Brands Double Panel Interactive Showcase */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              
+
               {/* Hyundai Focus Card */}
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 space-y-6 flex flex-col justify-between group hover:border-slate-950 hover:shadow-lg transition-all duration-300">
+              <div className="bg-slate-950 border border-slate-900 rounded-2xl p-6 sm:p-10 space-y-6 flex flex-col justify-between group hover:border-amber-500 hover:shadow-2xl hover:shadow-amber-500/5 transition-all duration-300">
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-display font-black text-slate-200 text-6xl select-none group-hover:text-amber-500 transition-colors">
+                  <div>
+                    <span className="font-display font-black text-slate-800/40 text-6xl select-none group-hover:text-amber-500/20 transition-colors">
                       01
                     </span>
-                    <Logo iconOnly className="scale-75" />
                   </div>
-                  <h3 className="font-display font-black text-xl sm:text-2xl text-slate-950 uppercase tracking-wide">
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase tracking-wide">
                     Especialidade Hyundai
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                     Catálogo robusto focado em reposição para motores Kappa (1.0), Gamma (1.6), e Nu (2.0), além de agregados, faróis de LED e mecânica de Creta, Tucson, ix35, e a linha completa de HB20.
                   </p>
-                  <ul className="space-y-2.5 text-xs text-slate-700 font-sans pt-2">
+                  <ul className="space-y-2.5 text-xs text-slate-300 font-sans pt-2">
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Cabeçotes e blocos testados em bancada
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-950" /> Sensores e injeção com part numbers confirmados
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-amber-500/50 transition-colors" /> Sensores e injeção com part numbers confirmados
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-950" /> Lataria na cor original sob consulta de estoque
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-amber-500/50 transition-colors" /> Lataria na cor original sob consulta de estoque
                     </li>
                   </ul>
                 </div>
-                <div className="pt-4 border-t border-slate-200">
+                <div className="pt-4 border-t border-slate-900">
                   <a
                     href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Buscando+pe%C3%A7as+especiais+para+ve%C3%ADculo+Hyundai."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs text-slate-950 font-bold uppercase transition-colors hover:text-amber-500"
+                    className="flex items-center gap-2 text-xs text-white font-bold uppercase transition-colors hover:text-amber-400"
                   >
                     <span>Consultar Hyundai no WhatsApp</span>
                     <ArrowRight className="w-4 h-4 text-amber-500 group-hover:translate-x-1.5 transition-transform" />
@@ -204,41 +213,37 @@ export default function App() {
               </div>
 
               {/* Kia Focus Card */}
-              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 space-y-6 flex flex-col justify-between group hover:border-slate-950 hover:shadow-lg transition-all duration-300">
+              <div className="bg-slate-950 border border-slate-900 rounded-2xl p-6 sm:p-10 space-y-6 flex flex-col justify-between group hover:border-amber-500 hover:shadow-2xl hover:shadow-amber-500/5 transition-all duration-300">
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="font-display font-black text-slate-200 text-6xl select-none group-hover:text-amber-500 transition-colors">
+                  <div>
+                    <span className="font-display font-black text-slate-800/40 text-6xl select-none group-hover:text-amber-500/20 transition-colors">
                       02
                     </span>
-                    {/* S. Korea Circular shape indicator */}
-                    <div className="w-8 h-8 rounded-full bg-slate-950 text-amber-400 flex items-center justify-center text-xs font-bold font-mono">
-                      KR
-                    </div>
                   </div>
-                  <h3 className="font-display font-black text-xl sm:text-2xl text-slate-950 uppercase tracking-wide">
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase tracking-wide">
                     Especialidade Kia Motors
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                     Atendimento forte focado em utilitários Bongo K2500, Sportage (todas as motorizações e transmissões automáticas), Cerato, Soul, Picanto e Sorento.
                   </p>
-                  <ul className="space-y-2.5 text-xs text-slate-700 font-sans pt-2">
+                  <ul className="space-y-2.5 text-xs text-slate-300 font-sans pt-2">
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Caixa de direção e kits de airbag exclusivos
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-950" /> Diferenciais e semi-eixos com procedência autenticada
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-amber-500/50 transition-colors" /> Diferenciais e semi-eixos com procedência autenticada
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-950" /> Transmissões automáticas revisadas e lacradas
+                      <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-amber-500/50 transition-colors" /> Transmissões automáticas revisadas e lacradas
                     </li>
                   </ul>
                 </div>
-                <div className="pt-4 border-t border-slate-200">
+                <div className="pt-4 border-t border-slate-900">
                   <a
                     href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Buscando+pe%C3%A7as+especiais+para+ve%C3%ADculo+Kia."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-xs text-slate-950 font-bold uppercase transition-colors hover:text-amber-500"
+                    className="flex items-center gap-2 text-xs text-white font-bold uppercase transition-colors hover:text-amber-400"
                   >
                     <span>Consultar Kia no WhatsApp</span>
                     <ArrowRight className="w-4 h-4 text-amber-500 group-hover:translate-x-1.5 transition-transform" />
@@ -248,16 +253,22 @@ export default function App() {
 
             </div>
 
-          </div>
+          </motion.div>
         </section>
 
         {/* Product categories grid gallery */}
-        <section 
-          id="categorias" 
+        <section
+          id="categorias"
           className="py-16 sm:py-24 border-b border-slate-900 bg-slate-950"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+          <motion.div
+            initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          >
+
             {/* Header header info */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
               <div className="space-y-2">
@@ -287,31 +298,31 @@ export default function App() {
             {/* Custom Category Interactive Tab Selector */}
             <CategorySelector />
 
-          </div>
+          </motion.div>
         </section>
 
         {/* Authority / Why buy from COREAUTO Section */}
-        <section 
-          id="diferenciais" 
+        <section
+          id="diferenciais"
           className="relative py-16 sm:py-24 border-b border-slate-100 bg-white overflow-hidden"
         >
           {/* Animated Minimalist Background Elements with rich visibility */}
           <div className="absolute inset-0 z-0 pointer-events-none select-none bg-slate-50/40">
             {/* Elegant moving grid pattern with rich slate contrast */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]"
-              animate={{ 
-                backgroundPosition: ["0px 0px", "56px 56px"] 
+              animate={{
+                backgroundPosition: ["0px 0px", "56px 56px"]
               }}
-              transition={{ 
-                duration: 24, 
-                ease: "linear", 
-                repeat: Infinity 
+              transition={{
+                duration: 24,
+                ease: "linear",
+                repeat: Infinity
               }}
             />
-            
+
             {/* Vivid drifting Amber/Yellow glow aura */}
-            <motion.div 
+            <motion.div
               className="absolute w-[420px] h-[420px] rounded-full bg-amber-400/20 blur-[100px]"
               animate={{
                 x: [-120, 120, -50, -120],
@@ -327,7 +338,7 @@ export default function App() {
             />
 
             {/* Vivid drifting sleek indigo/blue glow aura */}
-            <motion.div 
+            <motion.div
               className="absolute w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[130px]"
               animate={{
                 x: [150, -100, 60, 150],
@@ -343,7 +354,7 @@ export default function App() {
             />
 
             {/* Floating glowing micro-particles */}
-            <motion.div 
+            <motion.div
               className="absolute top-1/4 left-1/3 w-3 h-3 rounded-full bg-amber-400/60 blur-[1.5px]"
               animate={{
                 y: [0, -40, 0],
@@ -356,7 +367,7 @@ export default function App() {
                 ease: "easeInOut"
               }}
             />
-            <motion.div 
+            <motion.div
               className="absolute bottom-1/3 right-1/4 w-4 h-4 rounded-full bg-indigo-400/40 blur-[1.5px]"
               animate={{
                 y: [0, -30, 0],
@@ -370,7 +381,7 @@ export default function App() {
                 delay: 1.5
               }}
             />
-            <motion.div 
+            <motion.div
               className="absolute top-1/2 right-1/3 w-2 h-2 rounded-full bg-amber-400/50 blur-[1px]"
               animate={{
                 x: [0, 40, 0],
@@ -383,7 +394,7 @@ export default function App() {
                 delay: 3
               }}
             />
-            
+
             {/* Subtle border gradients for smooth layouts matching surrounding sections */}
             <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white to-transparent" />
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
@@ -391,33 +402,45 @@ export default function App() {
             <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
+          <motion.div
+            initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+          >
+
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
               <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
-                Padrão Profissional Certificado
+                Especialistas em Hyundai & Kia
               </span>
               <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-950 tracking-tight uppercase">
-                Fugimos do Amadorismo dos Desmanches Comuns
+                A precisão e a segurança que seu coreano exige
               </h2>
               <p className="text-xs sm:text-sm text-slate-600">
-                Criamos um processo blindado contra dores de cabeça com peças usadas ou recondicionadas. Atendimento ágil, documentações limpas e checagem eletrônica preventiva.
+                Garantimos compatibilidade exata pelo chassi do veículo, procedência 100% legalizada via leilões/Detran e garantia real de 90 dias. Uma experiência profissional e segura para o seu Hyundai ou Kia.
               </p>
             </div>
 
             {/* Comparative Grid Layouts */}
             <AuthorityFeatures />
 
-          </div>
+          </motion.div>
         </section>
 
         {/* Social Proof & Trustimonials Section */}
-        <section 
-          id="depoimentos" 
+        <section
+          id="depoimentos"
           className="py-16 sm:py-24 border-b border-slate-900 bg-slate-950"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+          <motion.div
+            initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          >
+
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
               <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
                 Comunidade Satisfeita
@@ -433,16 +456,22 @@ export default function App() {
             {/* Custom Testimonials Grid */}
             <Testimonials />
 
-          </div>
+          </motion.div>
         </section>
 
         {/* FAQ Section Accordions */}
-        <section 
-          id="faq" 
+        <section
+          id="faq"
           className="py-16 sm:py-24 border-b border-slate-100 bg-white"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+          <motion.div
+            initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-120px" }}
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          >
+
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
               <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
                 Tira-Dúvidas Sem enrolação
@@ -457,12 +486,18 @@ export default function App() {
 
             <FAQAccordions />
 
-          </div>
+          </motion.div>
         </section>
 
         {/* Floating Call to Action Section (Bottom Bar) */}
         <div className="bg-slate-950 border-t border-b border-slate-900 py-2">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
+          >
             <div className="space-y-1.5 text-center md:text-left">
               <div className="flex justify-center md:justify-start items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -482,7 +517,7 @@ export default function App() {
               <MessageSquare className="w-4 h-4" />
               <span>Cote Imediatamente via Whats</span>
             </button>
-          </div>
+          </motion.div>
         </div>
 
         {/* Global Footer */}
