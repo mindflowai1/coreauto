@@ -69,12 +69,7 @@ export default function App() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a08_1px,transparent_1px),linear-gradient(to_bottom,#0f172a08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-10" />
 
           {/* Hero Content Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full lg:pt-16 xl:pt-20"
-          >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full lg:pt-16 xl:pt-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 items-center">
 
               {/* Left Column: Typography directly on background with maximum impact and contrast */}
@@ -141,7 +136,7 @@ export default function App() {
               </div>
 
             </div>
-          </motion.div>
+          </div>
         </section>
 
         {/* Brand Focus / Exclusividade Section */}
@@ -153,7 +148,7 @@ export default function App() {
             initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
 
@@ -265,7 +260,7 @@ export default function App() {
             initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
 
@@ -406,7 +401,7 @@ export default function App() {
             initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
           >
 
@@ -437,7 +432,7 @@ export default function App() {
             initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
 
@@ -468,7 +463,7 @@ export default function App() {
             initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
           >
 
@@ -495,7 +490,7 @@ export default function App() {
             initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
           >
             <div className="space-y-1.5 text-center md:text-left">

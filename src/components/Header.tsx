@@ -18,7 +18,7 @@ export default function Header() {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // height of header
+      const offset = isScrolled ? 80 : 96; // height of header
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -35,15 +35,15 @@ export default function Header() {
     <header
       id="main-header"
       className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/85 h-20 shadow-sm'
-          : 'bg-white h-20 sm:h-24 border-b border-slate-150'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/85 h-20 sm:h-24 shadow-sm'
+          : 'bg-white h-24 sm:h-28 border-b border-slate-150'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="cursor-pointer flex items-center h-full" onClick={() => scrollToSection('home')}>
-            <Logo className="-my-3 sm:-my-5" />
+            <Logo className={`transition-all duration-300 origin-left ${isScrolled ? '-my-2 sm:-my-4 scale-[0.9]' : '-my-3 sm:-my-5'}`} />
           </div>
 
           {/* Desktop Nav */}
