@@ -1,0 +1,6 @@
+{
+  "name": "COREAUTO Peças",
+  "description": "Landing page de alta conversão para COREAUTO Peças Automotivas, especializada em peças novas e usadas para veículos Hyundai e Kia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

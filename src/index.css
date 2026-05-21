@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff; /* Premium white background */
+  color: #0f172a; /* Slate 900 for high readability */
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar matching the premium black & yellow theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f172a; /* Black/Dark Slate */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #eab308; /* Yellow-500 */
+}
+
+/* Minimalist legibility text-shadow utilities */
+.clean-shadow-title {
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.95), 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.clean-shadow-text {
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 1), 0 1.5px 3px rgba(255, 255, 255, 1);
+}
+
+
