@@ -59,7 +59,7 @@ export const PART_CATEGORIES: PartCategory[] = [
     description: 'Portas, capôs, para-lamas, tampas de porta-malas, para-choques, painéis frontais, grades, retrovisores e acabamento de painel.',
     iconName: 'Wrench',
     popularItems: ['Capô', 'Portas (Dianteira/Traseira)', 'Para-choque', 'Retrovisores', 'Tampa Traseira', 'Grade Frontal'],
-    imageName: 'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&q=80&w=600',
+    imageName: '/creta-lataria.jpg',
     verifiedHighlights: [
       'Garantia total de 90 dias',
       'Compatibilidade técnica garantida',
