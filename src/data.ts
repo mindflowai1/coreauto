@@ -72,7 +72,7 @@ export const PART_CATEGORIES: PartCategory[] = [
     description: 'Faróis principais, faróis de milha/neblina, chaves de seta e lanternas traseiras convencionais ou em LED.',
     iconName: 'Zap',
     popularItems: ['Farol Principal', 'Farol de Milha', 'Lanterna Traseira (Canto/Tampa)', 'Chaves de Seta', 'Lanterna Traseira LED'],
-    imageName: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600',
+    imageName: '/sportage-farois.png',
     verifiedHighlights: [
       'Garantia total de 90 dias',
       'Componentes 100% originais',
