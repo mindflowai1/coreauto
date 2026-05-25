@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PART_CATEGORIES } from '../data';
+import { PART_CATEGORIES, WHATSAPP_PHONE } from '../data';
 import * as LucideIcons from 'lucide-react';
 import { Package, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -20,7 +20,7 @@ export default function CategorySelector() {
 
   const getWhatsAppLinkForCategory = (catName: string) => {
     const text = `Olá Coreauto! Estou checando a categoria de *${catName}* da sua landing page e gostaria de consultar a disponibilidade de peças dessa linha no estoque.`;
-    return `https://wa.me/5511999999999?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -74,41 +74,35 @@ export default function CategorySelector() {
               </p>
 
               {/* Authority highlights for categories */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-xs text-slate-300 font-semibold">Fotos e vídeos reais pré-envio</span>
+              {currentCategoryData.verifiedHighlights && currentCategoryData.verifiedHighlights.length > 0 && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  {currentCategoryData.verifiedHighlights.map((highlight, idx) => (
+                    <div key={idx} className="flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-xs text-slate-300 font-semibold">{highlight}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-xs text-slate-300 font-semibold">Garantia total de 90 dias</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-xs text-slate-300 font-semibold">Compatibilidade checada pelo Chassi</span>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-xs text-slate-300 font-semibold">Procedência 100% Baixada pelo Detran</span>
-                </div>
-              </div>
+              )}
             </div>
 
-            <div className="space-y-4">
-              <span className="block text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">
-                Itens Populares Mais Fornecidos:
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {currentCategoryData.popularItems.map((item, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-white/5 font-mono text-xs px-3.5 py-1.5 border border-white/5 text-slate-300 rounded-lg font-bold"
-                  >
-                    {item}
-                  </span>
-                ))}
+            {currentCategoryData.popularItems && currentCategoryData.popularItems.length > 0 && (
+              <div className="space-y-4">
+                <span className="block text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">
+                  Itens Populares Mais Fornecidos:
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {currentCategoryData.popularItems.map((item, idx) => (
+                    <span
+                      key={idx}
+                      className="bg-white/5 font-mono text-xs px-3.5 py-1.5 border border-white/5 text-slate-300 rounded-lg font-bold"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="pt-4 border-t border-white/5">
               <a

@@ -5,6 +5,7 @@ import CategorySelector from './components/CategorySelector';
 import AuthorityFeatures from './components/AuthorityFeatures';
 import Testimonials from './components/Testimonials';
 import FAQAccordions from './components/FAQAccordions';
+import LocationSection from './components/LocationSection';
 import Footer from './components/Footer';
 import {
   ShieldCheck,
@@ -18,19 +19,22 @@ import {
   Car,
   BadgeAlert,
   ThumbsUp,
-  UserCheck
+  UserCheck,
+  X,
+  Phone
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { AUTHORITY_STATS } from './data';
+import { AUTHORITY_STATS, WHATSAPP_PHONE } from './data';
 
 export default function App() {
   const [activeBrandBanner, setActiveBrandBanner] = useState<'both' | 'hyundai' | 'kia'>('both');
+  const [isWppChatOpen, setIsWppChatOpen] = useState(false);
 
   const stats = AUTHORITY_STATS;
 
   const handleFloatingCall = () => {
     const defaultText = encodeURIComponent("Olá! Gostaria de consultar peças para Hyundai/Kia.");
-    window.open(`https://wa.me/5511999999999?text=${defaultText}`, '_blank', 'noreferrer');
+    window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${defaultText}`, '_blank', 'noreferrer');
   };
 
   return (
@@ -86,31 +90,31 @@ export default function App() {
                 {/* Main Headline with Sober Accent & Extra Impact */}
                 <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-[2.35rem] xl:text-[3.25rem] lg:leading-[1.1] xl:leading-[1.05] text-white tracking-tight uppercase">
                   A peça certa para <br />
-                  seu <span className="text-amber-400 font-black">coreano</span>, sem <br className="hidden sm:inline" />
+                  seu <span className="text-amber-400 font-black">koreano</span>, sem <br className="hidden sm:inline" />
                   complicação!
                 </h1>
 
                 {/* Descriptive subline - Clean & highly legible with modern contrast */}
                 <p className="text-xs sm:text-sm xl:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans font-medium">
-                  <span className="hidden lg:inline">Não perca tempo rodando em sucatas ou pagando fortunas em concessionárias. Fornecemos peças novas e seminovas com <span className="text-white font-extrabold border-b-2 border-amber-400/80">procedência garantida de leilão</span> e <span className="text-white font-extrabold border-b-2 border-amber-400/80">garantia de 3 meses</span>. Cruzamos o Chassi do seu carro com o catálogo original para erro zero.</span>
-                  <span className="lg:hidden">Peças de procedência com <span className="text-white font-semibold border-b border-amber-400/80">garantia de 3 meses</span> de leilão para seu Hyundai ou Kia. Chassi verificado para erro zero.</span>
+                  <span className="hidden lg:inline">Não perca tempo rodando em sucatas ou pagando fortunas em concessionárias. Fornecemos peças novas e seminovas com <span className="text-white font-extrabold border-b-2 border-amber-400/80">procedência garantida de leilão</span> e <span className="text-white font-extrabold border-b-2 border-amber-400/80">garantia de 3 meses</span>. Garantimos compatibilidade exata com o seu veículo.</span>
+                  <span className="lg:hidden">Peças de procedência com <span className="text-white font-semibold border-b border-amber-400/80">garantia de 3 meses</span> de leilão para seu Hyundai ou Kia. Compatibilidade verificada para erro zero.</span>
                 </p>
 
                 {/* Key specs bullet triggers */}
                 <div className="hidden lg:grid grid-cols-2 gap-3 xl:gap-4 max-w-md mx-auto lg:mx-0 pt-1 text-left">
-                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/10 p-3 rounded-2xl shadow-sm hover:bg-white/15 hover:border-white/25 transition-all duration-300 hover:scale-[1.01]">
+                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/10 p-3 rounded-2xl shadow-sm hover:bg-white/15 hover:border-white/25 transition-all duration-300 hover:scale-[1.01] h-[58px]">
                     <ShieldCheck className="w-4 h-4 xl:w-5 xl:h-5 text-emerald-400 flex-shrink-0" />
                     <div>
-                      <span className="block text-[10px] xl:text-xs font-black text-white uppercase tracking-wider leading-none">100% Legal</span>
-                      <span className="text-[9px] xl:text-[10px] text-slate-300 font-bold">Baixa oficial e NFe</span>
+                      <span className="block text-[10px] xl:text-xs font-black text-white uppercase tracking-wider leading-none">100% Homologado</span>
+                      <span className="text-[9px] xl:text-[10px] text-slate-300 font-bold">Credenciado pelo Detran</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/10 p-3 rounded-2xl shadow-sm hover:bg-white/15 hover:border-white/25 transition-all duration-300 hover:scale-[1.01]">
-                    <Sliders className="w-4 h-4 xl:w-5 xl:h-5 text-amber-400 flex-shrink-0" />
-                    <div>
-                      <span className="block text-[10px] xl:text-xs font-black text-white uppercase tracking-wider leading-none">Chassi Match</span>
-                      <span className="text-[9px] xl:text-[10px] text-slate-300 font-bold">Compatibilidade real</span>
-                    </div>
+                  <div className="flex items-center justify-center bg-white border border-white/10 p-2 px-6 rounded-2xl shadow-sm hover:scale-[1.01] transition-all duration-300 h-[58px] overflow-hidden">
+                    <img
+                      src="/logo-detran.png"
+                      alt="DETRAN MG"
+                      className="h-full object-contain"
+                    />
                   </div>
                 </div>
 
@@ -161,7 +165,7 @@ export default function App() {
                 A Linha Oriental Exige Especialização
               </h2>
               <p className="text-sm text-slate-600">
-                Carros coreanos possuem tolerâncias mecânicas finas e sistemas eletrônicos dedicados. Um desmanche de peças gerais costuma misturar lotes e enviar peças incompatíveis. Na COREAUTO, respiramos apenas Hyundai e Kia.
+                Carros koreanos possuem tolerâncias mecânicas finas e sistemas eletrônicos dedicados. Um desmanche de peças gerais costuma misturar lotes e enviar peças incompatíveis. Na COREAUTO, respiramos apenas Hyundai e Kia.
               </p>
             </div>
 
@@ -180,7 +184,7 @@ export default function App() {
                     Especialidade Hyundai
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    Catálogo robusto focado em reposição para motores Kappa (1.0), Gamma (1.6), e Nu (2.0), além de agregados, faróis de LED e mecânica de Creta, Tucson, ix35, e a linha completa de HB20.
+                    Estoque robusto de peças focado em reposição para motores Kappa (1.0), Gamma (1.6), e Nu (2.0), além de agregados, faróis de LED e mecânica completa para toda a gama de modelos da marca.
                   </p>
                   <ul className="space-y-2.5 text-xs text-slate-300 font-sans pt-2">
                     <li className="flex items-center gap-2">
@@ -196,7 +200,7 @@ export default function App() {
                 </div>
                 <div className="pt-4 border-t border-slate-900">
                   <a
-                    href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Buscando+pe%C3%A7as+especiais+para+ve%C3%ADculo+Hyundai."
+                    href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Buscando peças especiais para veículo Hyundai.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-xs text-white font-bold uppercase transition-colors hover:text-amber-400"
@@ -219,7 +223,7 @@ export default function App() {
                     Especialidade Kia Motors
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    Atendimento forte focado em utilitários Bongo K2500, Sportage (todas as motorizações e transmissões automáticas), Cerato, Soul, Picanto e Sorento.
+                    Atendimento forte focado em utilitários, SUVs e veículos leves da marca, cobrindo todas as motorizações e transmissões mecânicas ou automáticas.
                   </p>
                   <ul className="space-y-2.5 text-xs text-slate-300 font-sans pt-2">
                     <li className="flex items-center gap-2">
@@ -235,7 +239,7 @@ export default function App() {
                 </div>
                 <div className="pt-4 border-t border-slate-900">
                   <a
-                    href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Buscando+pe%C3%A7as+especiais+para+ve%C3%ADculo+Kia."
+                    href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Buscando peças especiais para veículo Kia.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-xs text-white font-bold uppercase transition-colors hover:text-amber-400"
@@ -280,7 +284,7 @@ export default function App() {
               <div className="flex items-center gap-3">
                 <span className="text-xs text-slate-500 hidden sm:inline">Precisa de outra linha?</span>
                 <a
-                  href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Preciso+de+uma+pe%C3%A7a+que+n%C3%A3o+est%C3%A1+listada+nas+categorias."
+                  href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Preciso de uma peça que não está listada nas categorias.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white hover:bg-slate-100 border border-slate-200 p-2.5 px-4 rounded-xl text-xs text-slate-950 font-extrabold tracking-wide transition-all hover:scale-[1.02] cursor-pointer"
@@ -410,10 +414,10 @@ export default function App() {
                 Especialistas em Hyundai & Kia
               </span>
               <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-950 tracking-tight uppercase">
-                A precisão e a segurança que seu coreano exige
+                A precisão e a segurança que seu koreano exige
               </h2>
               <p className="text-xs sm:text-sm text-slate-600">
-                Garantimos compatibilidade exata pelo chassi do veículo, procedência 100% legalizada via leilões/Detran e garantia real de 90 dias. Uma experiência profissional e segura para o seu Hyundai ou Kia.
+                Garantimos compatibilidade técnica exata, procedência 100% legalizada via leilões/Detran e garantia real de 90 dias. Uma experiência profissional e segura para o seu Hyundai ou Kia.
               </p>
             </div>
 
@@ -438,13 +442,13 @@ export default function App() {
 
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
               <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
-                Comunidade Satisfeita
+                Avaliações Reais no Google
               </span>
               <h2 className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight uppercase">
-                Opinião de Quem Compra e Recomenda
+                Transparência e Opinião de Quem Confia
               </h2>
               <p className="text-xs sm:text-sm text-slate-400">
-                Atendemos de oficinas mecânicas especializadas a motoristas de aplicativo e frotas de utilitários Kia Bongo. Veja o que dizem sobre nossa agilidade:
+                A opinião de nossos clientes é pública e 100% transparente. Veja abaixo as avaliações reais importadas diretamente do nosso perfil oficial no Google:
               </p>
             </div>
 
@@ -454,10 +458,13 @@ export default function App() {
           </motion.div>
         </section>
 
+        {/* Location Section */}
+        <LocationSection />
+
         {/* FAQ Section Accordions */}
         <section
           id="faq"
-          className="py-16 sm:py-24 border-b border-slate-100 bg-white"
+          className="py-16 sm:py-24 border-b border-slate-900 bg-slate-950"
         >
           <motion.div
             initial={{ opacity: 0, y: 45, filter: 'blur(10px)' }}
@@ -471,11 +478,11 @@ export default function App() {
               <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
                 Tira-Dúvidas Sem enrolação
               </span>
-              <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-950 tracking-tight uppercase">
+              <h2 className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight uppercase">
                 Perguntas Frequentes
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600">
-                Tem dúvidas sobre procedência, faturamento de nota fiscal, ou prazos de frete? Separamos as respostas de balcão mais comuns para você avançar seguro:
+              <p className="text-xs sm:text-sm text-slate-400">
+                Tem dúvidas sobre procedência legal, garantia de origem ou prazos de frete? Separamos as respostas de balcão mais comuns para você avançar seguro:
               </p>
             </div>
 
@@ -499,7 +506,7 @@ export default function App() {
                 <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest leading-none">Equipe de Balcão Ativa</span>
               </div>
               <h4 className="font-display font-black text-xl text-white uppercase tracking-tight">
-                Consulte seu Chassi e Receba Fotos Reais
+                Cote Sua Peça e Receba Fotos Reais
               </h4>
               <p className="text-xs text-slate-400 max-w-lg">
                 Consulte sem compromisso com nossos especialistas agora e economize até 70% comparado a novos originais com total segurança jurídica.
@@ -518,18 +525,135 @@ export default function App() {
         {/* Global Footer */}
         <Footer />
 
-        {/* Floating Fixed WhatsApp Circle Button */}
-        <button
-          onClick={handleFloatingCall}
-          className="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl hover:scale-110 active:scale-95 hover:rotate-3 active:-rotate-3 transition-all cursor-pointer border border-emerald-500/20 shadow-emerald-900/50 group"
-          aria-label="Direct WhatsApp Support"
-        >
-          <MessageSquare className="w-6 h-6 flex-shrink-0 animate-pulse" />
-          {/* Quick tool-tips */}
-          <span className="absolute right-14 top-1/2 -translate-y-1/2 bg-slate-950/95 text-white border border-slate-800 text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
-            Cote sua peça agora!
-          </span>
-        </button>
+        {/* Modern WhatsApp Chat Widget */}
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
+        {/* Modern WhatsApp Chat Widget */}
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
+          
+          {/* Chat Window Panel */}
+          {isWppChatOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              className="bg-white border border-slate-100 rounded-3xl shadow-2xl overflow-hidden w-[300px] sm:w-[350px] text-left relative flex flex-col z-55"
+            >
+              {/* Header: WhatsApp Green Theme */}
+              <div className="bg-[#075E54] p-4 text-white flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  {/* Company Logo Avatar */}
+                  <div className="w-10 h-10 rounded-full bg-white relative flex items-center justify-center p-1.5 flex-shrink-0 shadow-sm border border-slate-100">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 absolute bottom-0 right-0 border-2 border-white animate-pulse" />
+                    <img
+                      src="/logo coreauto.png"
+                      alt="Coreauto"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h5 className="font-extrabold text-sm leading-tight text-white">Coreauto</h5>
+                    <span className="text-[10px] text-slate-200 flex items-center gap-1 font-semibold">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Suporte Oficial
+                    </span>
+                  </div>
+                </div>
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsWppChatOpen(false)}
+                  className="text-white/80 hover:text-white p-1 rounded-full hover:bg-white/10 transition-colors cursor-pointer"
+                  aria-label="Fechar chat"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Chat Body: Subtle classic WhatsApp chat pattern or light gray */}
+              <div className="bg-[#e5ddd5] p-4 space-y-3 max-h-[250px] overflow-y-auto relative" style={{ backgroundImage: 'radial-gradient(#dfdcd6 1px, transparent 1px)', backgroundSize: '16px 16px' }}>
+                
+                {/* System Message */}
+                <div className="text-center">
+                  <span className="bg-white/70 backdrop-blur-sm text-[9px] font-black uppercase text-slate-500 py-1 px-2.5 rounded-full tracking-wider border border-slate-200/10 shadow-xs">
+                    Hoje
+                  </span>
+                </div>
+
+                {/* Assistant Message Bubble */}
+                <div className="flex items-start gap-2 max-w-[90%]">
+                  <div className="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-left border border-slate-200/10">
+                    <p className="text-xs text-slate-800 leading-relaxed">
+                      Olá! Seja bem-vindo ao atendimento da <strong>Coreauto</strong>. 😊
+                    </p>
+                    <p className="text-xs text-slate-800 leading-relaxed mt-1.5">
+                      Qual peça você está precisando para o seu Hyundai ou Kia hoje? Envie uma mensagem para nossa equipe e consulte o nosso estoque!
+                    </p>
+                    <span className="block text-[8px] text-slate-400 text-right mt-1 font-medium">
+                      Coreauto • Agora
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat Footer / Action Area */}
+              <div className="p-3 bg-white border-t border-slate-100 space-y-2">
+                {/* Primary WhatsApp Action Button */}
+                <button
+                  onClick={handleFloatingCall}
+                  className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white py-2.5 rounded-xl font-display font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-100 cursor-pointer active:scale-98"
+                >
+                  {/* Real WhatsApp SVG Logo (White inside green button) */}
+                  <svg
+                    className="w-5 h-5 text-white fill-current flex-shrink-0"
+                    viewBox="0 0 448 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                  </svg>
+                  <span>Chamar no WhatsApp</span>
+                </button>
+
+                {/* Direct Dial Telephone Button */}
+                <a
+                  href={`tel:+${WHATSAPP_PHONE}`}
+                  className="w-full bg-slate-900 hover:bg-slate-800 text-white py-2.5 rounded-xl font-display font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer active:scale-98"
+                >
+                  <Phone className="w-4 h-4 text-amber-500" />
+                  <span>Ligar por Telefone</span>
+                </a>
+              </div>
+
+            </motion.div>
+          )}
+
+          {/* Glowing Closed Tooltip */}
+          {!isWppChatOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              className="bg-slate-950/95 text-white border border-slate-800 text-[10px] font-black uppercase tracking-wider px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2 cursor-pointer hover:bg-slate-900 transition-colors"
+              onClick={() => setIsWppChatOpen(true)}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Dúvidas? Fale Conosco</span>
+            </motion.div>
+          )}
+
+          {/* Floating WhatsApp Button with Official SVG Logo */}
+          <button
+            onClick={() => setIsWppChatOpen(!isWppChatOpen)}
+            className="flex items-center justify-center p-3.5 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white shadow-2xl hover:scale-110 active:scale-95 transition-all cursor-pointer border border-[#25D366]/20 shadow-emerald-950/40 relative group"
+            aria-label="Toggle WhatsApp Chat Window"
+          >
+            {/* Real WhatsApp SVG Logo (Sharp & Precise) */}
+            <svg
+              className="w-9.5 h-9.5 flex-shrink-0 text-white fill-current"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+            </svg>
+          </button>
+        </div>
+        </div>
 
       </div>
     </div>

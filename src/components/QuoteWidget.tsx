@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { HelpCircle, ChevronRight, MessageSquare, AlertCircle, Sparkles } from 'lucide-react';
-import { VEHICLE_MODELS, PART_CATEGORIES } from '../data';
+import { VEHICLE_MODELS, PART_CATEGORIES, WHATSAPP_PHONE } from '../data';
 
 export default function QuoteWidget() {
   const [selectedBrand, setSelectedBrand] = useState<'Hyundai' | 'Kia'>('Hyundai');
@@ -8,6 +8,9 @@ export default function QuoteWidget() {
   const [selectedYear, setSelectedYear] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [partDescription, setPartDescription] = useState<string>('');
+  const [customModel, setCustomModel] = useState<string>('');
+  const [customYear, setCustomYear] = useState<string>('');
+  const [customCategory, setCustomCategory] = useState<string>('');
   
   // Form focus or warnings states
   const [errorMsg, setErrorMsg] = useState<string>('');
@@ -24,6 +27,8 @@ export default function QuoteWidget() {
     setSelectedBrand(brand);
     setSelectedModel('');
     setSelectedYear('');
+    setCustomModel('');
+    setCustomYear('');
   };
 
   // Find valid years for the selected model
@@ -37,36 +42,65 @@ export default function QuoteWidget() {
   const handleModelChange = (model: string) => {
     setSelectedModel(model);
     setSelectedYear('');
+    if (model !== 'Outro') {
+      setCustomModel('');
+      setCustomYear('');
+    }
   };
 
   // Compile standard WhatsApp Message
   const whatsappUrl = useMemo(() => {
-    const defaultPhone = '5511999999999'; // coreauto placeholder or official contact phone
-    
+    let modelName = selectedModel;
+    if (selectedModel === 'Outro') {
+      modelName = customModel ? `Outro (${customModel})` : 'Outro / Não listado';
+    }
+
+    let yearVal = selectedYear;
+    if (selectedModel === 'Outro') {
+      yearVal = customYear;
+    }
+
+    let categoryName = '';
+    if (selectedCategory) {
+      if (selectedCategory === 'Outra') {
+        categoryName = customCategory ? `Outra (${customCategory})` : 'Outra / Não listada';
+      } else {
+        const catObj = PART_CATEGORIES.find(c => c.id === selectedCategory);
+        categoryName = catObj ? catObj.name : selectedCategory;
+      }
+    }
+
     // Standard text
     let messageText = `Olá Coreauto! Vim pela Landing Page e pretendo realizar um orçamento rápido de peça:\n\n`;
     messageText += `• *Marca:* ${selectedBrand}\n`;
-    messageText += `• *Modelo:* ${selectedModel || '(Não especificado)'}\n`;
-    if (selectedYear) messageText += `• *Ano:* ${selectedYear}\n`;
-    if (selectedCategory) {
-      const catObj = PART_CATEGORIES.find(c => c.id === selectedCategory);
-      messageText += `• *Categoria:* ${catObj ? catObj.name : selectedCategory}\n`;
+    messageText += `• *Modelo:* ${modelName || '(Não especificado)'}\n`;
+    if (yearVal) messageText += `• *Ano:* ${yearVal}\n`;
+    if (categoryName) {
+      messageText += `• *Categoria:* ${categoryName}\n`;
     }
     if (partDescription.trim()) {
       messageText += `• *Peça específica:* ${partDescription.trim()}\n`;
     } else {
-      messageText += `• *Peça específica:* Consultar catálogo\n`;
+      messageText += `• *Peça específica:* Consultar estoque\n`;
     }
     
     messageText += `\nGostaria de verificar a disponibilidade desta peça em seu estoque e as fotos reais do item.`;
     
-    return `https://wa.me/${defaultPhone}?text=${encodeURIComponent(messageText)}`;
-  }, [selectedBrand, selectedModel, selectedYear, selectedCategory, partDescription]);
+    return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(messageText)}`;
+  }, [selectedBrand, selectedModel, selectedYear, selectedCategory, partDescription, customModel, customYear, customCategory]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedModel) {
       setErrorMsg('Por favor, selecione primeiro o modelo do seu veículo!');
+      return;
+    }
+    if (selectedModel === 'Outro' && !customModel.trim()) {
+      setErrorMsg('Por favor, especifique o modelo do seu veículo!');
+      return;
+    }
+    if (selectedCategory === 'Outra' && !customCategory.trim()) {
+      setErrorMsg('Por favor, especifique a categoria de peça!');
       return;
     }
     setErrorMsg('');
@@ -124,13 +158,7 @@ export default function QuoteWidget() {
           </div>
         </div>
 
-        {/* Brand Indicators */}
-        <div className="flex gap-2 p-2 px-3 bg-white/5 border border-white/10 rounded-lg text-[11px] leading-snug text-slate-200 lg:p-1.5 lg:px-2.5">
-          <AlertCircle className="w-3.5 h-3.5 flex-shrink-0 mt-0.5 text-amber-400" />
-          <p>
-            Buscando peças <strong className="text-white font-black">{selectedBrand}</strong>. Catálogo completo de motor, câmbio, injeção e lataria.
-          </p>
-        </div>
+
 
         {/* Step 2: Model and Year Dual Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-2 xl:gap-3">
@@ -151,6 +179,7 @@ export default function QuoteWidget() {
                   {m.name}
                 </option>
               ))}
+              <option value="Outro" className="bg-slate-900">Outro Modelo / Não listado</option>
             </select>
           </div>
 
@@ -177,6 +206,37 @@ export default function QuoteWidget() {
           </div>
         </div>
 
+        {/* Custom Model & Year Inputs */}
+        {selectedModel === 'Outro' && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-2 xl:gap-3">
+            <div>
+              <label className="block text-[10px] lg:text-[9px] xl:text-[10px] font-bold text-slate-350 uppercase tracking-widest mb-1">
+                Qual o modelo? <span className="text-amber-500">*</span>
+              </label>
+              <input
+                type="text"
+                required
+                value={customModel}
+                onChange={(e) => setCustomModel(e.target.value)}
+                placeholder="Exemplo: Hyundai Veracruz V6"
+                className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-lg py-2 lg:py-1.5 xl:py-2.5 px-3 text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 font-semibold"
+              />
+            </div>
+            <div>
+              <label className="block text-[10px] lg:text-[9px] xl:text-[10px] font-bold text-slate-350 uppercase tracking-widest mb-1">
+                Qual o ano?
+              </label>
+              <input
+                type="text"
+                value={customYear}
+                onChange={(e) => setCustomYear(e.target.value)}
+                placeholder="Exemplo: 2011/2012"
+                className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-lg py-2 lg:py-1.5 xl:py-2.5 px-3 text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 font-semibold"
+              />
+            </div>
+          </div>
+        )}
+
         {/* Step 3: Part Category Selection */}
         <div>
           <label className="block text-[10px] lg:text-[9px] xl:text-[10px] font-bold text-slate-300 uppercase tracking-widest mb-1">
@@ -194,8 +254,26 @@ export default function QuoteWidget() {
                 {cat.name}
               </option>
             ))}
+            <option value="Outra" className="bg-slate-900">Outra Categoria / Não listada</option>
           </select>
         </div>
+
+        {/* Custom Category Input */}
+        {selectedCategory === 'Outra' && (
+          <div>
+            <label className="block text-[10px] lg:text-[9px] xl:text-[10px] font-bold text-slate-350 uppercase tracking-widest mb-1">
+              Qual a Categoria? <span className="text-amber-500">*</span>
+            </label>
+            <input
+              type="text"
+              required
+              value={customCategory}
+              onChange={(e) => setCustomCategory(e.target.value)}
+              placeholder="Exemplo: Rodas, Som, Acabamento, etc..."
+              className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-lg py-2 lg:py-1.5 xl:py-2.5 px-3 text-xs sm:text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400/50 font-semibold"
+            />
+          </div>
+        )}
 
         {/* Step 4: Describe Parts Needed */}
         <div>
@@ -226,8 +304,8 @@ export default function QuoteWidget() {
               Mensagem a ser enviada:
             </span>
             <p className="text-[11px] text-slate-300 font-mono italic truncate">
-              {selectedBrand} {selectedModel} {selectedYear ? `/ Ano: ${selectedYear}` : ''}
-              {partDescription.trim() ? ` » "${partDescription}"` : ' » "Consultar catálogo..."'}
+              {selectedBrand} {selectedModel === 'Outro' ? (customModel || 'Outro') : selectedModel} {selectedModel === 'Outro' ? (customYear ? `/ Ano: ${customYear}` : '') : (selectedYear ? `/ Ano: ${selectedYear}` : '')}
+              {partDescription.trim() ? ` » "${partDescription}"` : ' » "Consultar estoque..."'}
             </p>
           </div>
         )}
@@ -249,7 +327,7 @@ export default function QuoteWidget() {
           </span>
           <span className="opacity-40 font-mono text-white">•</span>
           <span className="flex items-center gap-1 font-medium text-white/70">
-            Chassi consultado na hora
+            Compatibilidade confirmada na hora
           </span>
         </div>
       </form>

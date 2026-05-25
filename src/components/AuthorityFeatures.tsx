@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Search, ShieldAlert, Cpu, Heart, AlertTriangle, CheckCircle, RefreshCcw, Package } from 'lucide-react';
+import { WHATSAPP_PHONE } from '../data';
 
 export default function AuthorityFeatures() {
   return (
@@ -42,14 +43,14 @@ export default function AuthorityFeatures() {
                 <AlertTriangle className="w-5 h-5 text-red-500/80 flex-shrink-0 mt-0.5" />
                 <div>
                   <h6 className="font-bold text-sm text-slate-900">Risco legal severo (Receptação involuntária)</h6>
-                  <p className="text-xs text-slate-600 mt-0.5">Sem emissão de nota fiscal, sem comprovante de rastreabilidade ou baixa homologada.</p>
+                  <p className="text-xs text-slate-600 mt-0.5">Sem comprovante de rastreabilidade, sem baixa homologada ou garantia de procedência legal.</p>
                 </div>
               </li>
               <li className="flex gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-500/80 flex-shrink-0 mt-0.5" />
                 <div>
-                  <h6 className="font-bold text-sm text-slate-900">Ausência de garantia real</h6>
-                  <p className="text-xs text-slate-600 mt-0.5">"Peça usada não tem troca" é a regra comum. Se quebrar na montagem, o prejuízo é seu.</p>
+                  <h6 className="font-bold text-sm text-slate-900">Atendimento lento e amador</h6>
+                  <p className="text-xs text-slate-600 mt-0.5">Respostas demoradas no WhatsApp, fotos borradas sem detalhes e total desorganização no pós-venda.</p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -85,7 +86,7 @@ export default function AuthorityFeatures() {
                 <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <h6 className="font-bold text-sm text-slate-950">Compra 100% blindada e legalizada</h6>
-                  <p className="text-xs text-slate-600 mt-0.5">Todas as peças são enviadas com Nota Fiscal Eletrônica de venda, garantia e número de serial do Detran.</p>
+                  <p className="text-xs text-slate-600 mt-0.5">Todas as peças são enviadas com comprovante oficial de baixa, garantia e etiqueta de rastreabilidade do Detran.</p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -124,7 +125,7 @@ export default function AuthorityFeatures() {
           </p>
         </div>
         <a
-          href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Estou+com+o+n%C3%BAmero+do+chassi+do+meu+carro+e+gostaria+de+encontrar+a+pe%C3%A7a+exata."
+          href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Estou com o número do chassi do meu carro e gostaria de encontrar a peça exata.")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-emerald-600 hover:bg-emerald-500 font-display font-black text-xs uppercase tracking-widest text-white px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-950/20 whitespace-nowrap hover:scale-[1.02] active:scale-[0.98] cursor-pointer"

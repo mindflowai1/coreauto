@@ -30,50 +30,82 @@ export const PART_CATEGORIES: PartCategory[] = [
   {
     id: 'motor-transmissao',
     name: 'Motor & Transmissão',
-    description: 'Motores completos, cabeçotes, blocos, caixas de câmbio manual e automático, virabrequins, coletores e bielas.',
+    description: 'Motores completos e parciais Hyundai e Kia, cabeçotes, blocos, caixas de câmbio manual e automático, virabrequins e componentes internos.',
     iconName: 'Cpu',
-    popularItems: ['Motor Parcial', 'Cabeçote Completo', 'Câmbio Automático', 'Bloco do Motor', 'Cárter de Óleo', 'Comando de Válvulas'],
-    imageName: '/motor.jpg'
+    popularItems: ['Motores Parciais', 'Cabeçote', 'Câmbio Automático', 'Peças Internas do Motor', 'Cárter de Óleo', 'Comando de Válvulas', 'Virabrequim e outros'],
+    imageName: '/motor.jpg',
+    verifiedHighlights: [
+      'Garantia total de 90 dias',
+      'Empresa credenciada pelo Detran MG',
+      'Procedência 100% garantida'
+    ]
   },
   {
     id: 'suspensao-direcao',
     name: 'Suspensão & Direção',
-    description: 'Amortecedores, bandejas (balanças), caixas de direção hidráulica e elétrica, semi-eixos, mangas de eixo, agregados.',
+    description: 'Amortecedores, bandejas (balanças), caixas de direção, semi-eixos, mangas de eixo, agregados e colunas de direção.',
     iconName: 'Disc',
-    popularItems: ['Amortecedor Dianteiro/Traseiro', 'Bandeja de Suspensão', 'Caixa de Direção Elétrica', 'Semi-eixo Completo', 'Agregado de Suspensão', 'Coluna de Direção'],
-    imageName: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=600'
+    popularItems: ['Caixa de Direção', 'Agregado de Suspensão', 'Amortecedor Dianteiro/Traseiro', 'Bandeja de Suspensão', 'Semi-eixo Completo', 'Coluna de Direção'],
+    imageName: '/suspensao.jpg',
+    verifiedHighlights: [
+      'Garantia total de 90 dias',
+      'Empresa credenciada pelo Detran MG',
+      'Procedência 100% garantida'
+    ]
   },
   {
     id: 'lataria-acabamentos',
     name: 'Lataria & Acabamentos',
     description: 'Portas, capôs, para-lamas, tampas de porta-malas, para-choques, painéis frontais, grades, retrovisores e acabamento de painel.',
     iconName: 'Wrench',
-    popularItems: ['Capô Dianteiro', 'Porta Mecânica (Dianteira/Traseira)', 'Para-choque Dianteiro', 'Retrovisor Elétrico', 'Tampa Traseira', 'Grade Frontal'],
-    imageName: 'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&q=80&w=600'
+    popularItems: ['Capô', 'Portas (Dianteira/Traseira)', 'Para-choque', 'Retrovisores', 'Tampa Traseira', 'Grade Frontal'],
+    imageName: 'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&q=80&w=600',
+    verifiedHighlights: [
+      'Garantia total de 90 dias',
+      'Compatibilidade técnica garantida',
+      'Procedência 100% Baixada pelo Detran'
+    ]
   },
   {
     id: 'iluminacao-farois',
     name: 'Iluminação & Faróis',
-    description: 'Faróis máscara negra ou cromados, faróis de milha/neblina, lanternas traseiras em LED ou convencionais.',
+    description: 'Faróis principais, faróis de milha/neblina, chaves de seta e lanternas traseiras convencionais ou em LED.',
     iconName: 'Zap',
-    popularItems: ['Farol Principal (Xenon/LED)', 'Farol de Milha', 'Lanterna Traseira (Canto/Tampa)', 'Lanterna Traseira LED', 'Repetidor de Seta'],
-    imageName: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600'
+    popularItems: ['Farol Principal', 'Farol de Milha', 'Lanterna Traseira (Canto/Tampa)', 'Chaves de Seta', 'Lanterna Traseira LED'],
+    imageName: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600',
+    verifiedHighlights: [
+      'Garantia total de 90 dias',
+      'Componentes 100% originais',
+      'Testado eletronicamente e selado'
+    ]
   },
   {
     id: 'injecao-eletrica',
     name: 'Injeção & Elétrica',
-    description: 'Módulos de injeção (ECU/PCM), bicos injetores, alternadores, motores de partida, compressores de ar-condicionado, sensores.',
+    description: 'Módulos de injeção (ECU/PCM), bicos injetores, alternadores, motores de partida, flautas e sensores de alta precisão.',
     iconName: 'Activity',
-    popularItems: ['Módulo de Injeção Eletrônica', 'Alternador', 'Motor de Partida (Arranque)', 'Compressor de Ar Condicionado', 'Flauta com Bicos Injetores', 'Sensor Máf/Sonda Lambda'],
-    imageName: 'https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&q=80&w=600'
+    popularItems: ['Módulo de Injeção Eletrônica', 'Alternador', 'Motor de Partida (Arranque)', 'Flautas', 'Bicos Injetores', 'Sensor MAF / Sonda Lambda'],
+    imageName: 'https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&q=80&w=600',
+    verifiedHighlights: [
+      'Módulos testados eletronicamente',
+      'Garantia de funcionamento de 90 dias',
+      'Sensores e bicos limpos e testados',
+      'Componentes 100% originais e selados'
+    ]
   },
   {
     id: 'freios-seguranca',
     name: 'Freios & Segurança',
-    description: 'Módulos ABS, pinças de freio, cilindros mestre, kits de Airbag completos (bolsas, sensores, painel, cintos).',
+    description: 'Módulos ABS, pinças de freio, cilindros mestre, kits de Airbag completos, bolsas de airbag e componentes de segurança.',
     iconName: 'ShieldAlert',
-    popularItems: ['Kit Airbag Completo', 'Módulo ABS', 'Pinça de Freio Dianteira', 'Cilindro Mestre', 'Bolsa de Airbag do Volante', 'Hidrovácuo'],
-    imageName: '/freio.jpg'
+    popularItems: [],
+    imageName: '/freio.jpg',
+    verifiedHighlights: [
+      'Kit Airbag inspecionado e lacrado',
+      'Módulo ABS testado sem erros',
+      'Bolsas de airbag 100% íntegras',
+      'Procedência certificada com baixa'
+    ]
   }
 ];
 
@@ -84,7 +116,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Proprietário da RF Motores e Câmbios',
     avatar: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=facearea&facepad=2&w=150&h=150&q=80',
     rating: 5,
-    text: 'Cotei um motor de HB20 1.6 de alumínio que estava muito difícil de achar em bom estado. A Coreauto me mandou vídeo dele antes no teste, com compressão medida, nota fiscal de baixa no Detran e fotos detalhadas. Chegou na oficina limpo e montou perfeito. Recomendo de olhos fechados!',
+    text: 'Cotei um motor de HB20 1.6 de alumínio que estava muito difícil de achar em bom estado. A Coreauto me mandou vídeo dele antes no teste, com compressão medida, comprovante oficial de baixa no Detran e fotos detalhadas. Chegou na oficina limpo e montou perfeito. Recomendo de olhos fechados!',
     location: 'São Paulo - SP',
     verified: true,
   },
@@ -94,7 +126,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Mecânico Chefe e Proprietário',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=facearea&facepad=2&w=150&h=150&q=80',
     rating: 5,
-    text: 'Atendimento imbatível. A maior preocupação que tenho comprando peça Kia é vim errada pelo ano. Eles pedem o número do chassi no WhatsApp, cruzam com o catálogo original e mandam a exata. Economia de tempo absurda e garantia real. Meu cliente pagou 1/3 do preço da concessionária na caixa de transmissão.',
+    text: 'Atendimento imbatível. A maior preocupação que tenho comprando peça Kia é vir errada pelo ano. Eles cruzam as especificações técnicas diretamente com a peça original no WhatsApp e mandam a exata. Economia de tempo absurda e garantia real. Meu cliente pagou 1/3 do preço da concessionária na caixa de transmissão.',
     location: 'Belo Horizonte - MG',
     verified: true,
   },
@@ -114,12 +146,12 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: '1',
     question: 'De onde vêm as peças usadas comercializadas por vocês?',
-    answer: 'Nossas peças seminovas e usadas provêm exclusivamente de veículos adquiridos legamente em leilões de seguradoras, baixados oficialmente junto ao DETRAN. Somos uma empresa credenciada e focada na economia circular automotiva legal (Desmonte Legalizado), emitindo Nota Fiscal com a rastreabilidade integral da peça.'
+    answer: 'Nossas peças seminovas e usadas provêm exclusivamente de veículos adquiridos legalmente em leilões de seguradoras, baixados oficialmente junto ao DETRAN. Somos uma empresa credenciada e focada na economia circular automotiva legal (Desmonte Legalizado), garantindo a procedência 100% lícita com a rastreabilidade integral da peça.'
   },
   {
     id: '2',
     question: 'Como vocês garantem que a peça vai servir perfeitamente no meu carro?',
-    answer: 'Antes de concretizar qualquer venda, nossa equipe técnica solicita o número do CHASSI do seu Hyundai ou Kia. Nós consultamos diretamente o catálogo oficial da montadora para garantir que o número de peça (Part Number) seja 100% compatível com a motorização, ano e versão do seu veículo, evitando devoluções e dores de cabeça.'
+    answer: 'Antes de concretizar qualquer venda, nossa equipe técnica confirma todos os dados exatos do seu Hyundai ou Kia. Nós validamos a compatibilidade da peça para garantir que o Part Number (número de peça) seja 100% compatível com a motorização, ano e versão do seu veículo, evitando devoluções e dores de cabeça.'
   },
   {
     id: '3',
@@ -129,12 +161,12 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     id: '4',
     question: 'Como posso fazer o orçamento e finalizar a compra?',
-    answer: 'Nossa landing page foca no atendimento imediato e direto. Você preenche nosso formulário rápido acima ou clica nos botões de WhatsApp espalhados pelo site. Você falará imediatamente com um especialista de balcão que enviará fotos reais do nosso estoque, vídeos da peça funcionando (se motor), passará a cotação de frete, e finalizará via Pix ou cartão com link seguro.'
+    answer: 'O orçamento é feito de forma rápida diretamente pelo nosso WhatsApp. Após a confirmação de compatibilidade da peça e do cálculo do frete com nosso consultor, a finalização da compra e o pagamento podem ser realizados com total segurança via Pix, transferência bancária ou cartões de crédito.'
   },
   {
     id: '5',
     question: 'Vocês enviam para outros estados? Qual é o prazo?',
-    answer: 'Enviamos diariamente para todo o Brasil através de transportadoras parceiras homologadas (para itens pesados como motores, câmbios e portas) e Correios (Sedex para peças leves). No WhatsApp calculamos a melhor tarifa e o prazo estimado para sua região, fornecendo rastreamento passo-a-passo com seguro de carga completo.'
+    answer: 'Sim, realizamos envios diariamente para todo o Brasil através de transportadoras parceiras (para motores, câmbios e lataria) e Correios (para itens leves), sendo o custo e a responsabilidade do frete por conta do cliente. No WhatsApp, nossa equipe ajuda você a encontrar a melhor tarifa e prazo para sua região, cuidando de todo o despacho e fornecendo seguro de carga.'
   },
   {
     id: '6',
@@ -146,8 +178,8 @@ export const FAQ_ITEMS: FAQItem[] = [
 export const AUTHORITY_STATS = [
   { label: 'Peças em Estoque', value: '15.000+' },
   { label: 'Clientes Atendidos', value: '10.000+' },
-  { label: 'Anos de Especialização', value: '12' },
+  { label: 'Anos de Especialização', value: '7' },
   { label: 'Marcas Exclusivas', value: 'Hyundai & Kia' }
 ];
 
-export const WHATSAPP_PHONE = '5511999999999'; // Placeholder que será formatado dinamicamente para o whatsapp oficial da empresa
+export const WHATSAPP_PHONE = '553133095890';

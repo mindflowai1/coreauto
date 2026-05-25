@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageSquare, PhoneCall } from 'lucide-react';
 import Logo from './Logo';
+import { WHATSAPP_PHONE } from '../data';
+import { AnimatePresence, motion } from 'motion/react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,28 +57,22 @@ export default function Header() {
               Início
             </button>
             <button
-              onClick={() => scrollToSection('especialidades')}
-              className="text-sm font-semibold text-slate-700 hover:text-amber-500 transition-colors cursor-pointer"
-            >
-              Exclusividade
-            </button>
-            <button
               onClick={() => scrollToSection('categorias')}
               className="text-sm font-semibold text-slate-700 hover:text-amber-500 transition-colors cursor-pointer"
             >
               Categorias
             </button>
             <button
-              onClick={() => scrollToSection('diferenciais')}
-              className="text-sm font-semibold text-slate-700 hover:text-amber-500 transition-colors cursor-pointer"
-            >
-              Diferenciais
-            </button>
-            <button
               onClick={() => scrollToSection('depoimentos')}
               className="text-sm font-semibold text-slate-700 hover:text-amber-500 transition-colors cursor-pointer"
             >
               Depoimentos
+            </button>
+            <button
+              onClick={() => scrollToSection('como-chegar')}
+              className="text-sm font-semibold text-slate-700 hover:text-amber-500 transition-colors cursor-pointer"
+            >
+              Como Chegar
             </button>
             <button
               onClick={() => scrollToSection('faq')}
@@ -89,7 +85,7 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Gostaria+de+consultar+a+disponibilidade+de+uma+pe%C3%A7a."
+              href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Gostaria de consultar a disponibilidade de uma peça.")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-5 py-2.5 rounded-lg border border-emerald-500/20 shadow-md shadow-emerald-950/10 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
@@ -113,56 +109,58 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/98 border-b border-slate-200/90 backdrop-blur-lg transition-all duration-350 py-4 px-4 space-y-3 shadow-xl">
-          <button
-            onClick={() => scrollToSection('home')}
-            className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden overflow-hidden bg-white/98 border-b border-slate-200/90 backdrop-blur-lg py-4 px-4 space-y-3 shadow-xl"
           >
-            Início
-          </button>
-          <button
-            onClick={() => scrollToSection('especialidades')}
-            className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
-          >
-            Exclusividade Hyundai & Kia
-          </button>
-          <button
-            onClick={() => scrollToSection('categorias')}
-            className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
-          >
-            Categorias de Peças
-          </button>
-          <button
-            onClick={() => scrollToSection('diferenciais')}
-            className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
-          >
-            Por Que a Coreauto?
-          </button>
-          <button
-            onClick={() => scrollToSection('depoimentos')}
-            className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
-          >
-            Depoimentos
-          </button>
-          <button
-            onClick={() => scrollToSection('faq')}
-            className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
-          >
-            Dúvidas Frequentes
-          </button>
+            <button
+              onClick={() => scrollToSection('home')}
+              className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
+            >
+              Início
+            </button>
+            <button
+              onClick={() => scrollToSection('categorias')}
+              className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
+            >
+              Categorias de Peças
+            </button>
+            <button
+              onClick={() => scrollToSection('depoimentos')}
+              className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
+            >
+              Depoimentos
+            </button>
+            <button
+              onClick={() => scrollToSection('como-chegar')}
+              className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
+            >
+              Como Chegar
+            </button>
+            <button
+              onClick={() => scrollToSection('faq')}
+              className="block w-full text-left py-2 px-3 text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg text-sm font-semibold transition-all"
+            >
+              Dúvidas Frequentes
+            </button>
 
-          <a
-            href="https://wa.me/5511999999999?text=Ol%C3%A1%21+Gostaria+de+consultar+a+disponibilidade+de+uma+pe%C3%A7a."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold text-xs py-3 rounded-lg w-full transition-colors"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>FALAR COM ESPECIALISTA</span>
-          </a>
-        </div>
-      )}
+            <a
+              href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Gostaria de consultar a disponibilidade de uma peça.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold text-xs py-3 rounded-lg w-full transition-colors"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>FALAR COM ESPECIALISTA</span>
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

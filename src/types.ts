@@ -22,6 +22,7 @@ export interface PartCategory {
   iconName: string; // Used to match Lucide icon
   popularItems: string[];
   imageName: string; // Asset identification or generated search term
+  verifiedHighlights?: string[];
 }
 
 export interface VehicleModel {
