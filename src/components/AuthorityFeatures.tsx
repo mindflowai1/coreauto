@@ -36,7 +36,7 @@ export default function AuthorityFeatures() {
                 <AlertTriangle className="w-5 h-5 text-red-500/80 flex-shrink-0 mt-0.5" />
                 <div>
                   <h6 className="font-bold text-sm text-slate-900">Alta chance de peça incompatível</h6>
-                  <p className="text-xs text-slate-600 mt-0.5">Sistemas manuais baseados em "olhômetro" não conferem catálogos originais de chassi.</p>
+                  <p className="text-xs text-slate-600 mt-0.5">Sistemas manuais baseados em "olhômetro" não conferem a numeração original da peça (Part Number).</p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -78,8 +78,8 @@ export default function AuthorityFeatures() {
               <li className="flex gap-3">
                 <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <h6 className="font-bold text-sm text-slate-950">Compatibilidade garantida via Chassi</h6>
-                  <p className="text-xs text-slate-600 mt-0.5">Nossa consulta oficial no catálogo da Hyundai/Kia resulta em 100% de compatibilidade.</p>
+                  <h6 className="font-bold text-sm text-slate-950">Compatibilidade por Part Number</h6>
+                  <p className="text-xs text-slate-600 mt-0.5">Cruzamos o código original da peça diretamente com os catálogos oficiais da Hyundai e Kia para garantir 100% de precisão.</p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -114,18 +114,18 @@ export default function AuthorityFeatures() {
         <div className="space-y-2 text-center sm:text-left">
           <div className="flex justify-center sm:justify-start items-center gap-2">
             <span className="p-1 px-3 bg-amber-400/10 text-amber-400 text-[10px] font-black rounded-full uppercase tracking-wider border border-amber-500/30">
-              Chassis Service
+              Part Number Service
             </span>
           </div>
           <h5 className="font-display font-extrabold text-white text-lg sm:text-xl">
-            Tem o documento ou chassi em mãos?
+            Tem o código ou numeração gravada na peça?
           </h5>
           <p className="text-xs text-slate-400 max-w-xl">
-            Tire uma foto ou copie os últimos 8 dígitos do chassi. Nos mande no WhatsApp para acharmos a peça idêntica à do seu veículo em menos de 3 minutos!
+            Tire uma foto da gravação ou envie-nos o código original da peça (Part Number). Nós cruzamos a numeração na hora com nossos catálogos Hyundai e Kia para garantir compatibilidade 100% exata!
           </p>
         </div>
         <a
-          href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Estou com o número do chassi do meu carro e gostaria de encontrar a peça exata.")}`}
+          href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Olá! Tenho a numeração original da peça (Part Number) e gostaria de consultar a compatibilidade e o estoque.")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-emerald-600 hover:bg-emerald-500 font-display font-black text-xs uppercase tracking-widest text-white px-6 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-950/20 whitespace-nowrap hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
