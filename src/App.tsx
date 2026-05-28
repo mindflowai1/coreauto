@@ -96,8 +96,8 @@ export default function App() {
 
                 {/* Descriptive subline - Clean & highly legible with modern contrast */}
                 <p className="text-xs sm:text-sm xl:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans font-medium">
-                  <span className="hidden lg:inline">Não perca tempo rodando em sucatas ou pagando fortunas em concessionárias. Fornecemos peças novas e seminovas com <span className="text-white font-extrabold border-b-2 border-amber-400/80">procedência garantida de leilão</span> e <span className="text-white font-extrabold border-b-2 border-amber-400/80">garantia de 3 meses</span>. Garantimos compatibilidade exata com o seu veículo.</span>
-                  <span className="lg:hidden">Peças de procedência com <span className="text-white font-semibold border-b border-amber-400/80">garantia de 3 meses</span> de leilão para seu Hyundai ou Kia. Compatibilidade verificada para erro zero.</span>
+                  <span className="hidden lg:inline">Não perca tempo rodando em sucatas ou pagando fortunas em concessionárias. Fornecemos peças novas e seminovas com <span className="text-white font-extrabold border-b-2 border-amber-400/80">procedência garantida</span> e <span className="text-white font-extrabold border-b-2 border-amber-400/80">garantia de 3 meses</span>. Garantimos compatibilidade exata com o seu veículo.</span>
+                  <span className="lg:hidden">Peças de procedência com <span className="text-white font-semibold border-b border-amber-400/80">garantia de 3 meses</span> para seu Hyundai ou Kia. Compatibilidade verificada para erro zero.</span>
                 </p>
 
                 {/* Key specs bullet triggers */}
@@ -175,16 +175,21 @@ export default function App() {
               {/* Hyundai Focus Card */}
               <div className="bg-slate-950 border border-slate-900 rounded-2xl p-6 sm:p-10 space-y-6 flex flex-col justify-between group hover:border-amber-500 hover:shadow-2xl hover:shadow-amber-500/5 transition-all duration-300">
                 <div className="space-y-4">
-                  <div>
+                  <div className="flex items-center justify-between">
                     <span className="font-display font-black text-slate-800/40 text-6xl select-none group-hover:text-amber-500/20 transition-colors">
                       01
                     </span>
+                    <img
+                      src="/logo-hyundai-card.png"
+                      alt="Hyundai"
+                      className="h-20 sm:h-24 w-auto object-contain filter invert brightness-200 opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                   <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase tracking-wide">
                     Especialidade Hyundai
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    Estoque robusto de peças focado em reposição para motores Kappa (1.0), Gamma (1.6), e Nu (2.0), além de agregados, faróis de LED e mecânica completa para toda a gama de modelos da marca.
+                    Estoque robusto de peças focado em reposição para motores Kappa (1.0), Gamma (1.6), Nu (2.0) e outros, além de agregados, faróis de LED e mecânica completa para toda a gama de modelos da marca.
                   </p>
                   <ul className="space-y-2.5 text-xs text-slate-300 font-sans pt-2">
                     <li className="flex items-center gap-2">
@@ -214,10 +219,15 @@ export default function App() {
               {/* Kia Focus Card */}
               <div className="bg-slate-950 border border-slate-900 rounded-2xl p-6 sm:p-10 space-y-6 flex flex-col justify-between group hover:border-amber-500 hover:shadow-2xl hover:shadow-amber-500/5 transition-all duration-300">
                 <div className="space-y-4">
-                  <div>
+                  <div className="flex items-center justify-between">
                     <span className="font-display font-black text-slate-800/40 text-6xl select-none group-hover:text-amber-500/20 transition-colors">
                       02
                     </span>
+                    <img
+                      src="/logo-kia-card.png"
+                      alt="Kia"
+                      className="h-12 sm:h-16 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                   <h3 className="font-display font-black text-xl sm:text-2xl text-white uppercase tracking-wide">
                     Especialidade Kia Motors
@@ -227,7 +237,7 @@ export default function App() {
                   </p>
                   <ul className="space-y-2.5 text-xs text-slate-300 font-sans pt-2">
                     <li className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Caixa de direção e kits de airbag exclusivos
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Caixa de direção e kit painel completo com tabelier
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-700 group-hover:bg-amber-500/50 transition-colors" /> Diferenciais e semi-eixos com procedência autenticada

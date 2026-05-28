@@ -96,14 +96,14 @@ export const PART_CATEGORIES: PartCategory[] = [
   {
     id: 'freios-seguranca',
     name: 'Freios & Segurança',
-    description: 'Módulos ABS, pinças de freio, cilindros mestre, kits de Airbag completos, bolsas de airbag e componentes de segurança.',
+    description: 'Módulos ABS, pinças de freio, cilindros mestre, kit painel completo com tabelier e componentes de segurança.',
     iconName: 'ShieldAlert',
     popularItems: [],
     imageName: '/freio.jpg',
     verifiedHighlights: [
-      'Kit Airbag inspecionado e lacrado',
+      'Kit painel completo com tabelier inspecionado',
       'Módulo ABS testado sem erros',
-      'Bolsas de airbag 100% íntegras',
+      'Kit painel completo com tabelier 100% íntegro',
       'Procedência certificada com baixa'
     ]
   }
