@@ -100,7 +100,7 @@ export default function LocationSection() {
               <div className="absolute -inset-[1px] bg-gradient-to-r from-amber-500/15 to-sky-500/15 rounded-2xl opacity-40 blur-sm group-hover/map:opacity-100 transition-opacity pointer-events-none" />
               
               <iframe
-                title="Localização Coreauto"
+                title="Localização Uai Koreia"
                 src={embedUrl}
                 className="absolute inset-0 w-full h-full border-0 opacity-95 group-hover/map:opacity-100 transition-all duration-700"
                 allowFullScreen={true}

@@ -19,7 +19,7 @@ export default function CategorySelector() {
   const currentCategoryData = PART_CATEGORIES.find(c => c.id === activeCategory);
 
   const getWhatsAppLinkForCategory = (catName: string) => {
-    const text = `Olá Coreauto! Estou checando a categoria de *${catName}* da sua landing page e gostaria de consultar a disponibilidade de peças dessa linha no estoque.`;
+    const text = `Olá Uai Koreia! Estou checando a categoria de *${catName}* da sua landing page e gostaria de consultar a disponibilidade de peças dessa linha no estoque.`;
     return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
   };
 

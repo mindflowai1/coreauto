@@ -20,7 +20,7 @@ export default function Footer() {
           {/* Column 1: Brand & Bio */}
           <div className="md:col-span-5 space-y-4">
             <div className="cursor-pointer inline-block" onClick={scrollToTop}>
-              <Logo />
+              <img src="/logo uai koreia.png" alt="Uai Koreia" className="h-[115px] sm:h-[144px] w-auto object-contain" />
             </div>
             <p className="text-xs text-slate-600 max-w-sm leading-relaxed">
               Sua melhor alternativa inteligente para autopeças premium no Brasil. Especialistas dedicados a fornecer componentes novos e seminovos rigorosamente selecionados e testados para automóveis Hyundai e Kia.
@@ -98,14 +98,14 @@ export default function Footer() {
         <div className="mt-8 pt-5 border-t border-slate-200 space-y-4">
           <div className="py-2.5 px-3.5 bg-white border border-slate-200 rounded-xl text-[10px] text-slate-500 leading-relaxed">
             <p>
-              <strong>AVISO DE ISENÇÃO DE RESPONSABILIDADE (DISCLAIMER LEGAL):</strong> COREAUTO é um distribuidor independente de peças automotivas novas, seminovas e usadas e não possui qualquer tipo de vínculo comercial direto, licenciamento, representação oficial ou afiliação societária com as montadoras <strong>HYUNDAI MOTOR COMPANY</strong>® ou <strong>KIA CORPORATION</strong>® de forma direta. Todas as marcas nominativas, logos de fabricantes, nomes de modelos (Creta, Sportage, HB20, Tucson, Picanto, Sorento, etc.) e números de peça de referência (Part Numbers) mencionados nesta página servem única e exclusivamente para a identificação da compatibilidade técnica dos itens com os veículos dos usuários finais, constituindo direito de informação do consumidor (Artigo 31 da Lei nº 8.078/1990 - CDC).
+              <strong>AVISO DE ISENÇÃO DE RESPONSABILIDADE (DISCLAIMER LEGAL):</strong> UAI KOREIA é um distribuidor independente de peças automotivas novas, seminovas e usadas e não possui qualquer tipo de vínculo comercial direto, licenciamento, representação oficial ou afiliação societária com as montadoras <strong>HYUNDAI MOTOR COMPANY</strong>® ou <strong>KIA CORPORATION</strong>® de forma direta. Todas as marcas nominativas, logos de fabricantes, nomes de modelos (Creta, Sportage, HB20, Tucson, Picanto, Sorento, etc.) e números de peça de referência (Part Numbers) mencionados nesta página servem única e exclusivamente para a identificação da compatibilidade técnica dos itens com os veículos dos usuários finais, constituindo direito de informação do consumidor (Artigo 31 da Lei nº 8.078/1990 - CDC).
             </p>
           </div>
 
           {/* Tiny Foot & Certifications badges */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
             <p>
-              © {currentYear} COREAUTO PEÇAS AUTOMOTIVAS LTDA. CNPJ: 00.000.000/0001-00.
+              © {currentYear} UAI KOREIA PEÇAS AUTOMOTIVAS LTDA. CNPJ: 00.000.000/0001-00.
             </p>
             <div className="flex gap-3">
               <span className="hover:text-slate-800 select-none cursor-pointer">Termos de Uso</span>

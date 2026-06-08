@@ -7,6 +7,8 @@ export interface Testimonial {
   text: string;
   location: string;
   verified: boolean;
+  ownerReply?: string;
+  timeAgo?: string;
 }
 
 export interface FAQItem {

@@ -71,7 +71,7 @@ export default function QuoteWidget() {
     }
 
     // Standard text
-    let messageText = `Olá Coreauto! Vim pela Landing Page e pretendo realizar um orçamento rápido de peça:\n\n`;
+    let messageText = `Olá Uai Koreia! Vim pela Landing Page e pretendo realizar um orçamento rápido de peça:\n\n`;
     messageText += `• *Marca:* ${selectedBrand}\n`;
     messageText += `• *Modelo:* ${modelName || '(Não especificado)'}\n`;
     if (yearVal) messageText += `• *Ano:* ${yearVal}\n`;

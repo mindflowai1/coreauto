@@ -45,7 +45,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="cursor-pointer flex items-center h-full" onClick={() => scrollToSection('home')}>
-            <Logo className={`transition-all duration-300 origin-left ${isScrolled ? '-my-2 sm:-my-4 scale-[0.9]' : '-my-3 sm:-my-5'}`} />
+            <img
+              src="/logo uai koreia.png"
+              alt="Uai Koreia"
+              className={`transition-all duration-300 origin-left w-auto object-contain ${isScrolled ? 'h-[108px] sm:h-[132px]' : 'h-[132px] sm:h-[168px]'}`}
+            />
           </div>
 
           {/* Desktop Nav */}

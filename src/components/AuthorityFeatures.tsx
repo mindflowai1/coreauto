@@ -14,7 +14,7 @@ export default function AuthorityFeatures() {
             Não Corra Riscos Desnecessários
           </h4>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto mt-1 font-medium">
-            Veja a diferença entre comprar em desmanches comuns paralelos e a experiência profissional COREAUTO:
+            Veja a diferença entre comprar em desmanches comuns paralelos e a experiência profissional Uai Koreia:
           </p>
         </div>
 
@@ -63,14 +63,14 @@ export default function AuthorityFeatures() {
             </ul>
           </div>
 
-          {/* Coreauto Padrão (Right) */}
+          {/* Uai Koreia Padrão (Right) */}
           <div className="p-6 sm:p-10 space-y-6 bg-slate-50/20">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-slate-950 text-amber-400 border border-slate-900 rounded-lg">
                 <ShieldCheck className="w-5 h-5 text-amber-400" />
               </div>
               <h5 className="font-display font-black text-md text-slate-950 tracking-wide uppercase">
-                O Padrão Especialista COREAUTO
+                O Padrão Especialista UAI KOREIA
               </h5>
             </div>
 

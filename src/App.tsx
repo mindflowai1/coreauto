@@ -165,7 +165,7 @@ export default function App() {
                 A Linha Oriental Exige Especialização
               </h2>
               <p className="text-sm text-slate-600">
-                Carros koreanos possuem tolerâncias mecânicas finas e sistemas eletrônicos dedicados. Um desmanche de peças gerais costuma misturar lotes e enviar peças incompatíveis. Na COREAUTO, respiramos apenas Hyundai e Kia.
+                Carros koreanos possuem tolerâncias mecânicas finas e sistemas eletrônicos dedicados. Um desmanche de peças gerais costuma misturar lotes e enviar peças incompatíveis. Na UAI KOREIA, respiramos apenas Hyundai e Kia.
               </p>
             </div>
 
@@ -310,7 +310,7 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Authority / Why buy from COREAUTO Section */}
+        {/* Authority / Why buy from UAI KOREIA Section */}
         <section
           id="diferenciais"
           className="relative py-16 sm:py-24 border-b border-slate-100 bg-white overflow-hidden"
@@ -452,13 +452,13 @@ export default function App() {
 
             <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
               <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
-                Avaliações Reais no Google
+                Avaliações no Google
               </span>
               <h2 className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight uppercase">
                 Transparência e Opinião de Quem Confia
               </h2>
               <p className="text-xs sm:text-sm text-slate-400">
-                A opinião de nossos clientes é pública e 100% transparente. Veja abaixo as avaliações reais importadas diretamente do nosso perfil oficial no Google:
+                A opinião de nossos clientes é pública e 100% transparente. Veja abaixo as avaliações importadas diretamente do nosso perfil oficial no Google:
               </p>
             </div>
 
@@ -554,13 +554,13 @@ export default function App() {
                   <div className="w-10 h-10 rounded-full bg-white relative flex items-center justify-center p-1.5 flex-shrink-0 shadow-sm border border-slate-100">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 absolute bottom-0 right-0 border-2 border-white animate-pulse" />
                     <img
-                      src="/logo coreauto.png"
-                      alt="Coreauto"
+                      src="/logo uai koreia.png"
+                      alt="Uai Koreia"
                       className="w-full h-full object-contain"
                     />
                   </div>
                   <div>
-                    <h5 className="font-extrabold text-sm leading-tight text-white">Coreauto</h5>
+                    <h5 className="font-extrabold text-sm leading-tight text-white">Uai Koreia</h5>
                     <span className="text-[10px] text-slate-200 flex items-center gap-1 font-semibold">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                       Suporte Oficial
@@ -591,13 +591,13 @@ export default function App() {
                 <div className="flex items-start gap-2 max-w-[90%]">
                   <div className="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-left border border-slate-200/10">
                     <p className="text-xs text-slate-800 leading-relaxed">
-                      Olá! Seja bem-vindo ao atendimento da <strong>Coreauto</strong>. 😊
+                      Olá! Seja bem-vindo ao atendimento da <strong>Uai Koreia</strong>. 😊
                     </p>
                     <p className="text-xs text-slate-800 leading-relaxed mt-1.5">
                       Qual peça você está precisando para o seu Hyundai ou Kia hoje? Envie uma mensagem para nossa equipe e consulte o nosso estoque!
                     </p>
                     <span className="block text-[8px] text-slate-400 text-right mt-1 font-medium">
-                      Coreauto • Agora
+                      Uai Koreia • Agora
                     </span>
                   </div>
                 </div>
